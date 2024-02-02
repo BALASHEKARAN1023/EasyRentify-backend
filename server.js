@@ -7,7 +7,7 @@ const dbConnection=require("./DB")
 
 app.use(express.json());
 app.use(cors({
-    origin:["http://localhost:5173"],
+    origin:["https://easy-rentify-fe-npld-f6nm0ilwn-balashekaran-p-rs-projects.vercel.app/"],
     methods:["GET","POST"],
     credentials:true
 }))
