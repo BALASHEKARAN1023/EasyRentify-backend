@@ -6,12 +6,12 @@ const port=process.env.PORT || 5002;
 const dbConnection=require("./DB")
 
 app.use(express.json());
-app.use(cors({
-    origin:["https://easy-rentify-fe-npld-f6nm0ilwn-balashekaran-p-rs-projects.vercel.app"],
-    methods:["GET","POST"],
-    credentials:true
-}))
-// app.use(cors());
+// app.use(cors({
+//     origin:["https://easy-rentify-fe-npld-f6nm0ilwn-balashekaran-p-rs-projects.vercel.app"],
+//     methods:["GET","POST"],
+//     credentials:true
+// }))
+app.use(cors());
 app.use(cookieParser());
 app.use('/api/cars/',require('./routes/carsRoute.js'));
 app.use('/api/users/',require('./routes/usersRoute.js'));
