@@ -34,17 +34,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-    // const username = req.body.userName;
-    // const email = req.body.email;
-    // const password = req.body.password;
-    // const confirmpassword = req.body.confirmpassword;
-    // const{userName,email,password}=;
-    // const UserData = new User({
-    //     userName: username,
-    //     email: email,
-    //     password: password,
-    //     confirmpassword: confirmpassword
-    // });
+
     try {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);

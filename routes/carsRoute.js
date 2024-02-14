@@ -25,7 +25,6 @@ router.post("/addcar", async (req, res) => {
             bookedTimeSlots: [],
             rentPerHour: req.body.rentPerHour
         });
-        console.log(newcar);
         await newcar.save();
         res.send("Car added successfully");
 
@@ -38,7 +37,6 @@ router.post("/addcar", async (req, res) => {
 router.post("/editcar", async (req, res) => {
     try {
         const car = await Car.findOne({ _id: req.body._id });
-        console.log(car);
         car.name = req.body.name;
         car.image = req.body.image;
         car.fuelType = req.body.fuelType;
@@ -55,7 +53,7 @@ router.post("/editcar", async (req, res) => {
 
 router.post("/deletecar", async (req, res) => {
     try {
-       await Car.findOneAndDelete({ _id: req.body.carid });
+        await Car.findOneAndDelete({ _id: req.body.carid });
 
         res.send("Car deleted  successfully");
 
